@@ -6,19 +6,32 @@
     <meta name="viewport" content="width=device-witdh, initial-scale=1">
     <title>Entrainement de JavaScript || </title>
 
+    <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1>Outils en JavaScript</h1>
+    <h1 style="float:left;border: 2px dashed #333;">Outils en JavaScript</h1>
     <br/>
 
-    <section class="horloge">
-      <div id="clock"></div>
-    </section>
 
-  <div id="container">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="horloge">
+            <div id="clock"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
 
     <section class="calculatrice">
+      <h1>Calculatrice</h1>
     <form id="myform" name="calc">
       <input name="display" style="width:355px;height:100px;text-align:center; background-color:#1f80c9;"> <br/>
       <input type="button" value="0" OnClick="calc.display.value+='0'" />
@@ -39,44 +52,160 @@
       <input type="button" value="&#247;" OnClick="calc.display.value+='/'" style="background-color:rgb(172, 5, 5);" />
     </form>
   </section>
+  </div>
 
+  <div class="col-md-6">
+    <h1>Calcul de lettres</h1>
   <section class="wordcount">
-    <input id="str" value="" type="text">
+    <input id="str" value=""/>
     <div id="output"></div>
     <button id="btn" name="button"><h2>Clique pour calculer</h2></button>
   </section>
 
+</div>
 
- <section class="contactform">
-   <form id="cf" method="post" action="">
-
-     <fieldset>
-       <label for="name">Nom</label>
-       <input type="text" id="name" name="name" class="stored">
-
-       <label for="mail">Email</label>
-       <input type="email" name="email" id="email" class="stored">
-
-       <label for="message">Message</label>
-       <textarea id="message" name="message" rows="8" cols="80"></textarea>
-     </fieldset>
-
-     <button type="submit">Envoi</button>
-      <input type="reset" id="clear">
-
-   </form>
- </section>
+  </div>
 </div>
 
 
-  <section class="slider">
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <section class="contactform">
+        <h1>Contact</h1>
+         <form id="cf" method="post" action="">
 
-  </section>
+           <fieldset>
+             <label for="name">Nom</label>
+             <input type="text" id="name" name="name" class="stored">
+
+             <label for="mail">Email</label>
+             <input type="email" name="email" id="email" class="stored">
+
+             <label for="message">Message</label>
+             <textarea id="message" name="message" rows="8" cols="80"></textarea>
+           </fieldset>
+
+           <button type="submit">Envoi</button>
+            <input type="reset" id="clear">
+
+         </form>
+       </section>
+     </div>
+
+
+      <div class="col-md-6">
+        <section class="game">
+          <h1>Jeu de calcul</h1>
+          <div id="wrapper2">
+            <table width="400" height="300" align="center">
+              <tr>
+                <td>
+                  <div id="number1" style="font-size:45px;font-weight:bold;border:5px solid red;padding:20px;color:#fff;">1</div>
+                </td>
+                <td>
+                  <div style="font-size:45px;font-weight:bold;color:#fff;">+</div>
+                </td>
+                <td>
+                  <div id="number2" style="font-size:45px;font-weight:bold;border:5px solid #1f80c9;padding:20px;color:#fff;">2</div>
+                </td>
+                <td>
+                  <div style="font-size:45px;font-weight:bold;color:#fff;">=</div>
+                </td>
+                <td>
+                  <input id="salope" type="text" style="padding:10px;border:2px solid #333;color:#333;"></input>
+                </td>
+                <td>
+                  <input id="btn5" type="button" value="check"></input>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <section class="slider">
+            <h1>Image de chats</h1>
+            <div class="wrapper1">
+              <img class="mySlides" src="img/chat.jpg" style="width:80%"/>
+              <img class="mySlides" src="giphy.gif" style="width:80%"/>
+              <img class="mySlides" src="catbreadingeight.jpg" style="width:80%"/>
+              <img class="mySlides" src="20c.jpg" style="width:80%"/>
+              <img class="mySlides" src="1c8.jpg" style="width:80%"/>
+              <a class="btn1" style="position:absolute;top:55%;left:6%" onclick="plusDivs(-1)"><span id="btn1">&lt;</span></a>
+              <a class="btn2" style="position:absolute;top:55%;right:3%" onclick="plusDivs(1)"><span id="btnr">&gt;</span></a>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-6">
+          <section class="todo-list">
+            <h1>Liste des tâches</h1>
+            <div id="wrapper">
+              <input id="task" ><button id="add">Ajoute tache</button>
+              <div id="todos">
+              </div>
+            </div>
+          </section>
+          </div>
+
+          <div class="col-md-6">
+            <section class="taux">
+              <h1>Taux de change</h1>
+              <div id="box">
+               <table>
+                   <tr>
+                       <td><input id="fromAmount" type="text" size="15" onkeyup="recupererValeur()"/></td>
+                       <td>
+                           <select id="from" onchange="recupererValeur()">
+                             <option value="EUR">Europe (EUR)</option>
+                             <option value="USD">Dollars US (USD)</option>
+                             <option value="JPY">Japanese Yen (JPY)</option>
+                           </select>
+                       </td>
+                   </tr>
+                   <tr>
+                      <td><input id="toAmount" type="text" size="15" disabled/></td>
+                       <td>
+                           <select id="to" onchange="recupererValeur()">
+                             <option value="GBP">Livres(GBP)</option>
+                             <option value="JPY">Japanese Yen (JPY)</option>
+                             <option value="USD">Dollars US (USD)</option>
+                           </select>
+                       </td>
+                   </tr>
+               </table>
+              </div>
+            </section>
+
+          </div>
+      </div>
+    </div>
+
+
+
+
 
 
 
 
     <script src="jquery-3.3.1.js"></script>
+    <script src="bootstrap.min.js"></script>
     <script src="main.js"></script>
   </body>
 </html>
